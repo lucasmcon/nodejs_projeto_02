@@ -1,0 +1,25 @@
+{
+  "name": "projeto_02",
+  "version": "1.0.0",
+  "description": "Segundo projeto com NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasmcon/nodejs_projeto_02.git"
+  },
+  "author": "Lucas Menezes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasmcon/nodejs_projeto_02/issues"
+  },
+  "homepage": "https://github.com/lucasmcon/nodejs_projeto_02#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "sequelize": "^5.21.4"
+  }
+}
