@@ -1,4 +1,4 @@
-# Projeto 01 - NodeJS - Blog
+# Projeto 02 - NodeJS - Blog
 Segundo projeto utilizando NodeJS + Express + EJS + Bodyparser + MySQL (Sequelize) + Bootstrap
 A ideia do projeto é criar um blog ficticio, com sistema de login para administradores e inclusão de artigos.
 
