@@ -13,7 +13,7 @@ const Category = require("./categories/Category");
 //View engine
 app.set('view engine', 'ejs');
 
-//Static
+//Static - carregamento bibliotecas e arquivos estaticos
 app.use(express.static('public'));
 
 //Body parser
