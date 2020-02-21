@@ -19,6 +19,6 @@ const Article = connection.define('articles',{
 Category.hasMany(Article); //Relação 1:n
 Article.belongsTo(Category); //Relação 1:1
 
-//Article.sync({force: true}); - utilizar esse comando somente na primeira vez, para criar a tabela
+//Article.sync({force: true}); //- utilizar esse comando somente na primeira vez, para criar a tabela
 
 module.exports = Article;
