@@ -5,7 +5,9 @@
         <hr>
         <h2>Categorias</h2>
         <hr>
-        <table class="table table-borered">
+        <a class="btn btn-info" href="/admin/categories/new">Cadastrar categoria</a>
+        <hr>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -17,15 +19,30 @@
             <tbody>
                 <% categories.forEach(category =>{ %>
                     <tr>
-                        <th><%= category.id %></th>
-                        <th><%= category.title %></th>
-                        <th><%= category.slug %></th>
-                        <th></th>
+                        <td><%= category.id %></td>
+                        <td><%= category.title %></td>
+                        <td><%= category.slug %></td>
+                        <td>
+                            <button class="btn btn-warning">Editar</button>
+                            <form method="POST" action="/categories/delete" style="display: inline" onsubmit="deleteConfirm(event, this)">
+                                <input type="hidden" name="id" value="<%= category.id %>">
+                                <button class="btn btn-danger">Deletar</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
-
     </div>
 </body>
 <%- include ('../../partials/footer.ejs'); %>
+<script>
+    function deleteConfirm(event, form){
+        event.preventDefault();
+        
+        var confirm = window.confirm('Deseja realmente excluir a categoria?')
+        if(confirm){
+            form.submit();
+        }
+    }
+</script>
