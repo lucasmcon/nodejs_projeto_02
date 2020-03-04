@@ -5,7 +5,38 @@
         <hr>
         <h2>Artigos</h2>
         <hr>
-        <h3>Artigos</h3>
+        <a class="btn btn-info" href="/admin/articles/new">Criar novo artigo</a>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Slug</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% articles.forEach(article=>{ %>
+                    <td><%= article.id %></td>
+                    <td><%= article.title %></td>
+                    <td><%= article.slug %></td>
+                    <td><%= article.category.title %></td>
+                    <td></td>
+                <% }) %>
+            </tbody>
+        </table>
     </div>
 </body>
 <%- include ('../../partials/footer.ejs'); %>
+<script>
+    function deleteConfirm(event, form){
+        event.preventDefault();
+        
+        var confirm = window.confirm('Deseja realmente excluir a categoria?')
+        if(confirm){
+            form.submit();
+        }
+    }
+</script>
