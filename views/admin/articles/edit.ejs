@@ -8,8 +8,17 @@
                 <h2>Edição de Artigos</h2>    
             </div>
             <div class="card-body">
-                <form method="POST" action="/categories/update">
-                    <input class="form-control" type="text" name="title" value="<%=article.title%>"placeholder="Defina o título da categoria"><br>
+                <form method="POST" action="/articles/update">
+                    <label>Título do artigo:</label>
+                    <input class="form-control" type="text" name="title" value="<%=article.title%>" placeholder="Defina o título da categoria"><br>
+                    <label>Informe a nova categoria:</label>
+                    <select name="category" class="form-control">
+                        <% categories.forEach((category) =>{ %>
+                            <option value="<%=category.id%>"><%= category.title %></option>
+                        <% }) %>
+                    </select>
+                    <br>
+                    <textarea class="form-control" placeholder="Conteúdo do artigo" name="body" id="article"><%=article.body%></textarea><br>
                     <input type="hidden" name="id" value="<%=article.id%>">
                     <button class="btn btn-info" type="submit">Atualizar</button>
                 </form>
@@ -18,3 +27,15 @@
     </div>
 </body>
 <%- include('../../partials/footer.ejs') %>
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#article",
+        plugins: [
+            'advlist autolink link image lists print preview hr serchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+        ]
+    });
+
+</script>
