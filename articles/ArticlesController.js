@@ -80,11 +80,11 @@ router.get("/admin/articles/edit/:id", (req,res) =>{
                 if(categories != undefined){
                     res.render("admin/articles/edit", {article: article, categories: categories});
                 }else{
-                    res.redirect("/admin/categories");
+                    res.redirect("/admin/articles");
                 }
             })
         }else{
-            res.redirect("/admin/categories");
+            res.redirect("/admin/articles");
         }
     }).catch(err =>{
         res.redirect("/admin/articles");
