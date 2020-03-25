@@ -44,25 +44,6 @@ app.use("/", categoriesController); //É possível criar um prefixo, Ex: app.use
 app.use("/", articlesController);
 //Users Router
 app.use("/", usersController);
-
-app.get("/session", (req, res)=>{
-    req.session.treinamento = 'formatação Node.JS';
-    req.session.email = 'lucsamcon@gmail.com';
-    req.session.ano = 2020
-    req.session.user = {
-        username: 'lucasmcon',
-        senha: '123456'
-    }
-    res.send("Sessão gerada com sucesso");
-});
-
-app.get("/read", (req, res)=>{
-    res.json({
-        treinamento: req.session.treinamento,
-        user: req.session.user
-    });
-});
-
     
 //Rotas
 app.get("/", (req,res)=>{
